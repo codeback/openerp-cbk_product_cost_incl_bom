@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_new_list_price" model="ir.ui.view">
+            <field name="name">Update cost price</field>
+            <field name="model">store.cost.product</field>
+            <field name="priority" eval="18"/>
+            <field name="arch" type="xml">
+                <form string="Store Cost Product" version="7.0">
+                    <label string="
+               WARNING!: This action can take several minutes."/>
+                    <footer>
+                        <button special="cancel" string="_Cancel" icon='gtk-cancel'/>
+                        or
+                         <button name="store_cost_price" string="Update" type="object" icon="terp-gtk-go-back-rtl"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window name="Store Cost Product"
+            res_model="store.cost.product"
+            src_model="product.product"
+            key2="client_action_multi"
+            multi="True"
+            view_mode="form"
+            view_type="form"
+            target="new"
+            id="action_store_cost_product"/>
+    </data>
+</openerp>
